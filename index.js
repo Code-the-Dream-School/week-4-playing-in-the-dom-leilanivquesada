@@ -92,23 +92,24 @@ deleteButton.addEventListener('click', () => {
 //hint: the volumen of a sphere is ((4/3) × π × r^3) and the surface area is (4 × π × r^2)
 
 
-// get the input for "volume"
 const volume = document.querySelector('#volume');
 const area = document.querySelector('#area');
 const a3 = document.getElementById('a-3');
-
 const calculate_sphere = () =>{
+
   // get input of radius
   let radius = document.querySelector('#radius').value;
+  // convert from string to integer
   let radiusInput = Number.parseInt(radius);
   
   // create and perform math and insert answer as value
   let areaFormula = (4 * Math.PI * Math.pow(radiusInput, 2)).toFixed(2);
   let volumeFormula = (((4/3) * Math.PI * (Math.pow(radiusInput, 3)))).toFixed(2);
+  // set return values for the text input fields 
   volume.setAttribute('value', `${volumeFormula} cubic units`);
   area.setAttribute('value', `${areaFormula} sq units`);
   
-  // return false to prevent form default clearing behavior
+  // return false to prevent form clearing 
   return false;
 };
     
